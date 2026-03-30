@@ -1,0 +1,7 @@
+Flask
+flask_cors  
+numpy
+pandas
+yfinance
+scikit-learn
+tensorflow
