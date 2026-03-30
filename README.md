@@ -19,10 +19,12 @@ Welcome to Stock-Price-Prediction! This application uses artificial intelligence
 
 ## 🌟 Features
 
-- AI Predictions: The dashboard predicts next-day stock prices using a deep learning LSTM model.
-- Global Market Support: Access stock predictions from major markets such as the US, India, China, Japan, and the UK.
-- Interactive Dashboard: The user-friendly React dashboard provides charts and recent searches to enhance your experience.
-- Powerful Backend: The application runs on a Flask backend, utilizing TensorFlow and Keras for robust performance.
+- **AI Predictions:** The dashboard predicts next-day stock prices using a deep learning LSTM model.
+- **Global Market Support:** Access stock predictions from major markets such as the US, India, China, Japan, and the UK.
+- **Responsive Favorites Sidebar:** Save and quickly access your most monitored stocks using the new interactive Favorites section.
+- **Localized Pricing (INR):** Centralized configuration renders predicted prices and historical chart tooltips in ₹ by default.
+- **Interactive Dashboard:** The user-friendly React dashboard provides comprehensive charts and recent searches.
+- **Powerful Backend:** The application runs on a Flask backend, utilizing TensorFlow and Keras for robust AI performance.
 
 ## 🖥 System Requirements
 
@@ -37,13 +39,13 @@ To ensure the best experience with Stock-Price-Prediction, please have the follo
 
 1. **Open the Dashboard:** After launching the application, you will see the main dashboard.
 
-2. **Select Stock:** Choose the stock you want to analyze from the dropdown menu.
+2. **Select Stock:** Search for the stock you want to analyze using the search bar (e.g. `AAPL`, `RELIANCE.NS`).
 
-3. **View Predictions:** The application will display the predicted price for the next day and historical trends.
+3. **View Predictions:** The application will display the predicted price for the next day and render historical price trends.
 
-4. **Explore Features:** Use the interactive charts for deeper insights into stock movements.
+4. **Add to Favorites:** Save any analyzed stock to your favorites by clicking the 🌟 icon on the prediction card. It will instantly appear in your left sidebar for 1-click retrieval.
 
-5. **Recent Searches:** Check the recent searches section for quick access to stocks you’ve analyzed before.
+5. **Recent Searches:** Check the recent searches section for quick access to stocks you’ve analyzed recently.
 
 ## 🚧 Troubleshooting
 
