@@ -1,5 +1,4 @@
-import { TrendingUp, TrendingDown, IndianRupee, Star } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TrendingUp, TrendingDown, Star } from "lucide-react";
 import { APP_CONFIG } from "@/config";
 import { useFavorites } from "@/hooks/use-favorites";
 
@@ -18,41 +17,71 @@ export function PredictionCard({ prediction, ticker, previousPrice }: Prediction
   const isFav = isFavorite(ticker);
 
   return (
-    <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-          Predicted Price for {ticker}
-          <div
-            role="button"
-            className="cursor-pointer ml-1 text-primary hover:opacity-80"
-            onClick={() => toggleFavorite({ symbol: ticker, name: ticker })}
-          >
-            <Star className={`h-4 w-4 ${isFav ? 'fill-primary' : ''}`} />
-          </div>
-        </CardTitle>
-        <IndianRupee className="h-4 w-4 text-primary" />
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold text-foreground">
+    <div className="bg-gradient-to-br from-surface-container to-surface-container-high rounded-3xl p-8 border border-white/5 shadow-xl relative overflow-hidden h-full flex flex-col">
+      <div className="absolute top-0 right-0 p-4 opacity-5">
+        {isPositive || isPositive === null ? (
+          <TrendingUp className="w-24 h-24 text-on-surface" />
+        ) : (
+          <TrendingDown className="w-24 h-24 text-on-surface" />
+        )}
+      </div>
+
+      <div className="flex items-center justify-between mb-6">
+        <p className="text-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">
+          Price Prediction for {ticker}
+        </p>
+        <button
+          className="p-2 transition-colors hover:bg-white/5 rounded-full"
+          onClick={() => toggleFavorite({ symbol: ticker, name: ticker })}
+        >
+          <Star className={`h-5 w-5 ${isFav ? 'fill-primary text-primary' : 'text-on-surface-variant'}`} />
+        </button>
+      </div>
+
+      <div className="mb-8">
+        <h4 className="text-on-surface-variant text-sm font-medium mb-1">Predicted Value</h4>
+        <p className="font-headline text-5xl font-black text-on-surface">
           {APP_CONFIG.currencySymbol}{prediction.toFixed(2)}
+        </p>
+      </div>
+
+      <div className="flex items-center justify-between p-4 bg-secondary-container/20 rounded-xl border border-secondary/20 mt-auto">
+        <div>
+          <p className="text-[10px] uppercase font-bold tracking-widest mb-1 text-on-surface-variant">
+            Outlook
+          </p>
+          {change !== null && changePercent !== null ? (
+            <div className={`flex items-center gap-2 font-headline text-xl font-bold ${isPositive ? 'text-secondary' : 'text-tertiary'}`}>
+              {isPositive ? "Bullish" : "Bearish"}
+              {isPositive ? <TrendingUp className="h-5 w-5" /> : <TrendingDown className="h-5 w-5" />}
+            </div>
+          ) : (
+            <div className="font-headline text-xl font-bold text-on-surface">Calculating...</div>
+          )}
         </div>
+
         {change !== null && changePercent !== null && (
-          <div className={`flex items-center gap-1 text-sm mt-1 ${isPositive ? 'text-success' : 'text-destructive'
-            }`}>
-            {isPositive ? (
-              <TrendingUp className="h-3 w-3" />
-            ) : (
-              <TrendingDown className="h-3 w-3" />
-            )}
-            <span>
-              {isPositive ? '+' : ''}{APP_CONFIG.currencySymbol}{change.toFixed(2)} ({changePercent.toFixed(1)}%)
-            </span>
+          <div className="text-right">
+            <p className="text-[10px] uppercase font-bold tracking-widest mb-1 text-on-surface-variant">
+              Delta
+            </p>
+            <p className={`font-headline text-xl font-bold ${isPositive ? 'text-secondary' : 'text-tertiary'}`}>
+              {isPositive ? '+' : ''}{changePercent.toFixed(1)}%
+            </p>
           </div>
         )}
-        <p className="text-xs text-muted-foreground mt-2">
-          Next-day prediction based on historical data
-        </p>
-      </CardContent>
-    </Card>
+      </div>
+
+      <div className="mt-6 pt-6 border-t border-white/5 space-y-4">
+        <div className="flex justify-between items-center text-sm">
+          <span className="text-on-surface-variant">Timeframe</span>
+          <span className="font-bold text-on-surface">Next 7 Days</span>
+        </div>
+        <div className="flex justify-between items-center text-sm">
+          <span className="text-on-surface-variant">AI Reliability</span>
+          <span className="text-primary font-bold">Historical Base</span>
+        </div>
+      </div>
+    </div>
   );
 }

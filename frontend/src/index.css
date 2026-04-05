@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 13% 97%;
+    --background: #ffffff;
     --foreground: 220 13% 15%;
 
     --card: 0 0% 100%;
@@ -17,24 +17,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 15%;
 
-    --primary: 219 78% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 219 78% 70%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --secondary: 220 13% 93%;
-    --secondary-foreground: 220 13% 25%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
 
     --muted: 220 13% 95%;
     --muted-foreground: 220 9% 46%;
 
     --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
@@ -47,33 +40,43 @@ All colors MUST be HSL.
     --sidebar-bg: 0 0% 100%;
     --navbar-bg: 0 0% 100%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(219 78% 60%), hsl(219 78% 70%));
-    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 55%));
-    
     /* Shadows */
     --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Predictive Editorial Light Mode */
+    --primary: #4f46e5;
+    --primary-container: #e0e7ff;
+    --on-primary-container: #312e81;
+    --on-primary: #ffffff;
+    --secondary: #10b981;
+    --on-secondary: #ffffff;
+    --tertiary: #f43f5e; 
+    --on-tertiary: #ffffff;
+    --on-background: #0f172a;
+    --surface: #ffffff;
+    --on-surface: #0f172a;
+    --surface-variant: #f1f5f9;
+    --on-surface-variant: #475569;
+    --outline: #cbd5e1;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f8fafc;
+    --surface-container: #f1f5f9;
+    --surface-container-high: #e2e8f0;
+    --surface-container-highest: #cbd5e1;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: #0b1326;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -82,20 +85,14 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
@@ -108,6 +105,27 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Predictive Editorial Dark Mode */
+    --primary: #c0c1ff;
+    --primary-container: #8083ff;
+    --on-primary-container: #0d0096;
+    --on-primary: #1000a9;
+    --secondary: #4edea3;
+    --on-secondary: #003824;
+    --tertiary: #ffb3ad;
+    --on-tertiary: #68000a;
+    --on-background: #dae2fd;
+    --surface: #0b1326;
+    --on-surface: #dae2fd;
+    --surface-variant: #2d3449;
+    --on-surface-variant: #c7c4d7;
+    --outline: #908fa0;
+    --surface-container-lowest: #060e20;
+    --surface-container-low: #131b2e;
+    --surface-container: #171f33;
+    --surface-container-high: #222a3d;
+    --surface-container-highest: #2d3449;
   }
 }
 

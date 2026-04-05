@@ -17,16 +17,20 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: "var(--background)",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
+          foreground: "var(--on-primary)",
           glow: "hsl(var(--primary-glow))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--on-secondary)",
+        },
+        tertiary: {
+          DEFAULT: "var(--tertiary)",
+          foreground: "var(--on-tertiary)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -68,11 +72,32 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Predictive Editorial Custom Colors
+        "outline": "var(--outline)",
+        "on-background": "var(--on-background)",
+        "surface-container": "var(--surface-container)",
+        "on-primary": "var(--on-primary)",
+        "primary-container": "var(--primary-container)",
+        "surface-dim": "var(--surface-dim)",
+        "surface-container-low": "var(--surface-container-low)",
+        "secondary-container": "var(--secondary-container)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface-container-highest": "var(--surface-container-highest)",
+        "surface-container-high": "var(--surface-container-high)",
+        "surface-bright": "var(--surface-bright)",
+        "on-primary-container": "var(--on-primary-container)",
+        "surface": "var(--surface)",
+        "on-surface": "var(--on-surface)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        headline: ["Manrope", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
